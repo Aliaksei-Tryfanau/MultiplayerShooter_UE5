@@ -135,6 +135,9 @@ protected:
 	void SaveFramePackage();
 	FFramePackage GetFrameToCheck(ABlasterCharacter* HitCharacter, float HitTime);
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	bool bShowFramePackage;
+
 	/** 
 	* Hitscan
 	*/
@@ -158,7 +161,6 @@ protected:
 	/** 
 	* Shotgun
 	*/
-
 	FShotgunServerSideRewindResult ShotgunConfirmHit(
 		const TArray<FFramePackage>& FramePackages,
 		const FVector_NetQuantize& TraceStart,
@@ -166,7 +168,6 @@ protected:
 	);
 
 private:
-
 	UPROPERTY()
 	ABlasterCharacter* Character;
 
@@ -178,7 +179,4 @@ private:
 	UPROPERTY(EditAnywhere)
 	float MaxRecordTime = 4.f;
 
-public:	
-	
-		
 };
